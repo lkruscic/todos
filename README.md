@@ -1,6 +1,10 @@
 # Todos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3. with the intention to experiment with latest angular version (16 at the time this readme is written)
+In particular I'm interested in experimenting with 
+* rxjs
+* standalone component
+* authentication / authorization
 
 ## Development server
 
