@@ -4,9 +4,13 @@ import { combineLatest, Observable } from 'rxjs';
 import { TodoInterface } from '../../types/todo.interface';
 import { map } from 'rxjs/operators';
 import { FilterEnum } from '../../types/filter.enum';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todos-todo-list',
+  standalone: true,
+  imports: [CommonModule, TodoItemComponent],
   templateUrl: './todo-list.component.html',
   styleUrls: [],
 })

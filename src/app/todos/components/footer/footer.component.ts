@@ -3,9 +3,12 @@ import { Observable } from 'rxjs';
 import { FilterEnum } from '../../types/filter.enum';
 import { TodoService } from '../../services/todos';
 import { map } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todos-footer',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: [],
 })

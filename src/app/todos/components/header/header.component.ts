@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { TodoService } from '../../services/todos';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todos-header',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: 'header.component.html',
 })
 export class HeaderComponent {
