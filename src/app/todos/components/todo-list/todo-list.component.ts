@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
-import { TodoService } from '../../services/todos';
-import { combineLatest, Observable } from 'rxjs';
-import { TodoInterface } from '../../types/todo.interface';
-import { map } from 'rxjs/operators';
-import { FilterEnum } from '../../types/filter.enum';
+import {Component, OnInit} from '@angular/core';
+import {TodoService} from '../../services/todos';
+import {combineLatest, Observable} from 'rxjs';
+import {TodoInterface} from '../../types/todo.interface';
+import {map} from 'rxjs/operators';
+import {FilterEnum} from '../../types/filter.enum';
 
 @Component({
   selector: 'app-todos-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: [],
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   noTodosClass$: Observable<boolean>;
   isAllTodosSelected$: Observable<boolean>;
   editingId: string | null = null;
   visibleTodos$: Observable<TodoInterface[]>;
+  todos: TodoInterface[] = [];
 
   constructor(private todosService: TodoService) {
     this.noTodosClass$ = this.todosService.todos$.pipe(
@@ -45,5 +46,9 @@ export class TodoListComponent {
 
   setEditingId(editingId: string | null): void {
     this.editingId = editingId;
+  }
+
+  ngOnInit(): void {
+
   }
 }
